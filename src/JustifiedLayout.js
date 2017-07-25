@@ -162,7 +162,8 @@ class JustifiedLayout extends Component {
 JustifiedLayout.propTypes = {
 	children: React.PropTypes.oneOfType([
 		React.PropTypes.arrayOf(React.PropTypes.node),
-		React.PropTypes.node
+		React.PropTypes.node,
+		React.PropTypes.func,
 	]),
   items: PropTypes.array.isRequired,
   options: PropTypes.object,
