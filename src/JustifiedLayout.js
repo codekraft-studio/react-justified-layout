@@ -36,37 +36,40 @@ class JustifiedLayout extends Component {
    * Render the boxes with the state values
    */
   render() {
-
-    // Check if child exist and bind state props to it
-    const childWithProp = React.Children.map(this.props.children, (child) => {
-      // TODO: check if a self running function is seen as a valid element to avoid using extra components
-      if( !child || child === null ) { return child; }
-      return React.cloneElement(child, { items: this.state.items });
-    });
-
+			
     // Default rendering function
     const renderBoxes = () => {
-      
-      // Map items and return boxes with default template
-      return this.state.items.map( 
-        
-        (item, index) => {
-  
-          return (
-            <div key={index} style={item.style} className={item.className}>
-              <img src={item.src} alt={item.title} />
-            </div>    
-          );
+			
+			// if is a function execute it passing state items
+			if( typeof this.props.children === 'function' ) {
+				return this.props.children(this.state.items);
+			}
 
-        }
-				
-      );
-      
+			// Map items and return boxes with default template
+			if( this.props.children === null ) {
+	      return this.state.items.map( 
+	        (item, index) => {
+	          return (
+	            <div key={index} style={item.style} className={item.className}>
+	              <img src={item.src} alt={item.title}></img>
+	            </div>    
+	          );
+	        }
+	      );
+			}
+			
+			// Default case map properties to children
+			return React.Children.map(this.props.children, (child) => {
+	      // TODO: check if a self running function is seen as a valid element to avoid using extra components
+	      if( !child || child === null ) { return child; }
+	      return React.cloneElement(child, { items: this.state.items });
+	    });
+  
     };
 
     return (
       <div ref="container" className="justified-layout-container" style={this.state.style}>
-        { childWithProp ? childWithProp : renderBoxes() }
+        { renderBoxes() }
       </div>
     );
     
