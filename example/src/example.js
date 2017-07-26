@@ -63,17 +63,36 @@ var App = React.createClass({
   },
 	
 	render () {
+		
+		const customBoxes = (array) => {
+				
+			return array.map(
+				(item, index) => {
+					return(
+						<div className="custom-box" key={index} style={item.style}>
+							<img src={item.url}></img>
+						</div>
+					);
+				}
+			);
+			
+		};
+		
 		return (
 			<div className="container">
-
 				<div className="col-md-12 panel">
 					<button className="bnt btn-default btn-lg" onClick={this.addImage}>ADD</button>
 					<button className="bnt btn-default btn-lg" onClick={this.removeImage}>REMOVE</button>
 					<button className="bnt btn-default btn-lg" onClick={this.randomize}>RANDOMIZE</button>
 				</div>
-
-				<JustifiedLayout items={this.state.images} options={this.state.options} />
-
+				<div className="panel">
+					<JustifiedLayout items={this.state.images} options={this.state.options}></JustifiedLayout>
+				</div>
+				<div className="panel">
+					<JustifiedLayout items={this.state.images} options={this.state.options}>
+						{(items) => customBoxes(items)}					
+					</JustifiedLayout>
+				</div>
 			</div>
 		);
 	}
