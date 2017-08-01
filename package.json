@@ -1,5 +1,5 @@
 {
-  "name": "@codekraft-dev/react-justified-layout",
+  "name": "@codekraft-studio/react-justified-layout",
   "version": "0.1.0",
   "description": "Justified Layout",
   "main": "src/JustifiedLayout.js",
