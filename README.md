@@ -7,7 +7,7 @@ Install the module and save it to your project dependencies:
 npm install @codekraft-studio/react-justified-layout
 ```
 Import the module in your application:
-```bash
+```js
 import JustifiedLayout from '@codekraft-studio/react-justified-layout';
 ```
 Now you are ready to use the __JustifiedLayout__ component in your app.
