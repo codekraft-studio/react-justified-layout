@@ -1,6 +1,8 @@
 # react-justified-layout
 > reactjs wrapper for flickr justified-layout module
 
+### [DEMO](https://codekraft-studio.github.io/react-justified-layout/)
+
 ## Getting started
 Install the module and save it to your project dependencies:
 ```bash
