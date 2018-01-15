@@ -1,6 +1,6 @@
 {
   "name": "@codekraft-studio/react-justified-layout",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A empty started for building React components",
   "main": "build/index.js",
   "scripts": {
