@@ -65,7 +65,7 @@ You can use a custom template for rendering your boxes, to do this you must add 
 Pass as child a react component or simple html element, you can than pass the items variable to your component and than iterate it.
 ```html
 <JustifiedLayout items={this.state.images} options={this.state.options}>
-	
+
 	<!-- custom component to display images -->
 	<ImagesList images={items} />
 
